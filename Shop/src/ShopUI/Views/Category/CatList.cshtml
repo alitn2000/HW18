@@ -1,0 +1,41 @@
+﻿@using ShopUI.Models.Entities
+@model List<Category>;
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Category List</h2>
+    <table class="table table-striped table-bordered table-hover text-center align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Category Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model != null && Model.Any())
+                {
+
+
+
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.Id</th>
+                            <td>@item.CatName</td>
+                        </tr>
+                    }
+
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4" class="text-center text-danger">
+                            No products available.
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
